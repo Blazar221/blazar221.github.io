@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import "./hero.css";
+
+* {
+    margin: 0;
+    font-family: "Source Code Pro", monospace;
+    color: #F6F1F1;
+}
+
+:root {
+    --theme: #2BA3F0;
+    --lg-size: 1.5em;
+    --sm-size: 0.8em;
+}
+
+p, span, h1 {
+    user-select: none;
+}
+
+body {
+    background-color: var(--theme);
+    min-width: 900px;
+}
