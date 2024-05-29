@@ -1,0 +1,19 @@
+#experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#experience i:nth-child(1){
+    font-size: 30px;
+    animation: flow-down 2s ease-out infinite;
+}
+
+@keyframes flow-down {
+    from, to {
+        transform: translateY(-1em);
+    }
+    60% {
+        transform: translateY(0em);
+    }
+}
