@@ -1,0 +1,18 @@
+#navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    background-color: var(--theme-trans);
+}
+
+.navbar-item {
+    padding: 1em;
+    cursor: pointer;
+}
+
+.navbar-item:last-child {
+    margin-right: 5em;
+}

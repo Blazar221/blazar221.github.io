@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import "./hero.css";
 @import "./experience.css";
+@import "./navbar.css";
 
 * {
     margin: 0;
@@ -10,6 +11,7 @@
 
 :root {
     --theme: #2BA3F0;
+    --theme-trans: #2ba4f06b;
     --lg-size: 1.5em;
     --sm-size: 0.8em;
 }
@@ -20,4 +22,5 @@ p, span, h1 {
 
 body {
     min-width: 900px;
+    background-color: var(--theme);
 }
