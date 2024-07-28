@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import "./navbar.css";
+@import "./hero.css";
+@import "./experience.css";
+@import "./skill.css";
+
+* {
+    margin: 0;
+    font-family: "Source Code Pro", monospace;
+    color: #F6F1F1;
+}
+
+:root {
+    --theme: #2BA3F0;
+    --theme-trans: #2ba4f06b;
+    --lg-size: 1.5em;
+    --sm-size: 0.8em;
+}
+
+p,
+span,
+h1 {
+    user-select: none;
+}
+
+body {
+    min-width: 900px;
+    background-image: url("../asset/img.jpg");
+    background-size: 100%;
+    background-position-y: 15%;
+    background-repeat: no-repeat;
+    background-color: var(--theme);
+    background-blend-mode: soft-light;
+    /* overflow: hidden; */
+}
+
+.fa-arrow-down {
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    font-size: 2.5em;
+    animation: roll 1.5s linear infinite;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px 9px;
+}
+
+.fa-arrow-down:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--theme)
+}
+
+.container {
+    height: 100vh;
+    transition: transform 1s ease;
+}
