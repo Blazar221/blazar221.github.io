@@ -2,5 +2,5 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: green;
+    background: linear-gradient(transparent, white 20%, white 80%, transparent);
 }

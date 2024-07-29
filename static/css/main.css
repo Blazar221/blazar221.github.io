@@ -25,13 +25,14 @@ h1 {
 
 body {
     min-width: 900px;
+    height: 100vh;
     background-image: url("../asset/img.jpg");
     background-size: 100%;
     background-position-y: 15%;
     background-repeat: no-repeat;
     background-color: var(--theme);
     background-blend-mode: soft-light;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .fa-arrow-down {
@@ -53,4 +54,5 @@ body {
 .container {
     height: 100vh;
     transition: transform 1s ease;
+    backdrop-filter: blur(2px);
 }

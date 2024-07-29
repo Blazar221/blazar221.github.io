@@ -4,9 +4,17 @@ const expData = [
     {
         place: "Acumen LLC, Sphere Institute",
         title: "Data Visualization Developer II",
-        start: new Date(2023, 6, 16),
+        start: new Date(2024, 2, 1),
         end: new Date(2024, 11, 31),
-        placement: "left",
+        type: "fulltime",
+        img: "https://assets-global.website-files.com/6394aa3508df0bd2aa3841c5/6394aa3508df0b9b9038420f_sphere_logo.png"
+    },
+    {
+        place: "Acumen LLC, Sphere Institute",
+        title: "Data Visualization Developer I",
+        start: new Date(2023, 7, 17),
+        end: new Date(2024, 1, 31),
+        type: "fulltime",
         img: "https://assets-global.website-files.com/6394aa3508df0bd2aa3841c5/6394aa3508df0b9b9038420f_sphere_logo.png"
     },
     {
@@ -14,28 +22,63 @@ const expData = [
         title: "Frontend Developer",
         start: new Date(2022, 3, 1),
         end: new Date(2022, 8, 30),
-        placement: "right",
-        img: "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/x5ju0wqyyqcw3qfl8f3z"
-    }
+        type: "intern",
+        img: "../asset/otif.png"
+    },
+    {
+        place: "University of Southern California",
+        title: "Master of Computer Science",
+        start: new Date(2021, 8, 1),
+        end: new Date(2023, 5, 12),
+        type: "school",
+        img: "https://identity.usc.edu/wp-content/uploads/2022/09/PrimaryMonogram.png"
+    },
+    {
+        place: "Xi'an Jiaotong University",
+        title: "Research Assistant - Full Stack Engineer",
+        start: new Date(2020, 11, 1),
+        end: new Date(2021, 5, 12),
+        type: "fulltime",
+        img: "https://www.xjtu.edu.cn/__local/E/26/06/414ABA4090B26221D9D69928163_9872DAFE_9521.jpg"
+    },
+    {
+        place: "Nanjing University",
+        title: "Bachelor of Software Engineering",
+        start: new Date(2016, 9, 1),
+        end: new Date(2020, 5, 12),
+        type: "school",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgilpEuNIMZ5_Gu-0cauhbq_SOzkGzbCOlYge_HsdcHlLuLln7ZKBCeni3n3OcgAtZKfs&usqp=CAU"
+    },
+    {
+        place: "FanRuan Software Co., Ltd.",
+        title: "Mobile Application Developer",
+        start: new Date(2019, 7, 1),
+        end: new Date(2019, 9, 1),
+        type: "intern",
+        img: "https://media.licdn.com/dms/image/C510BAQHP4PSKELBPKQ/company-logo_200_200/0/1631332597680?e=2147483647&v=beta&t=74kyq6dh67hlcNOa9zmGvz6ntC0q-7OwkHZvyS0ALmY"
+    },
+
 ]
+expData.forEach((each, index) => {
+    each.placement = index % 2 === 0 ? "up" : "down"
+});
 
-const container = d3.select("#experience svg");
+const container = d3.select("#experience-container svg");
 
-const width = 800;
-const height = 600;
-const innerHeight = 550;
-const picDim = 80;
+const lineWidth = 5;
+const lineColor = "#C5FF95"
+const picDim = 100;
 
-const timeScale = d3.scaleTime([new Date(2016, 0, 1), new Date(2024, 11, 31)], [innerHeight / 2, -innerHeight / 2])
+const timeScale = d3.scaleTime([new Date(2016, 0, 1), new Date(2024, 11, 31)], [-innerWidth / 2, innerWidth / 2])
 
 container
     .append("line")
-    .attr("x1", 0)
-    .attr("y1", -innerHeight / 2)
-    .attr("x2", 0)
-    .attr("y2", innerHeight / 2)
+    .attr("x1", -innerWidth / 2)
+    .attr("y1", 0)
+    .attr("x2", innerWidth / 2)
+    .attr("y2", 0)
     .attr("stroke", "white")
-    .attr("stroke-width", 10)
+    .attr("stroke-width", lineWidth)
     .attr("stroke-linecap", "round")
 
 const expGroup = container
@@ -46,18 +89,21 @@ const expGroup = container
 
 expGroup
     .append("line")
-    .attr("x1", d => d.placement === "left" ? -20 : 20)
-    .attr("x2", d => d.placement === "left" ? -20 : 20)
-    .attr("y1", d => timeScale(d.start))
-    .attr("y2", d => timeScale(d.end))
-    .attr("stroke", "red")
-    .attr("stroke-width", 8)
+    .attr("y1", d => d.placement === "up" ? -15 : 15)
+    .attr("y2", d => d.placement === "up" ? -15 : 15)
+    .attr("x1", d => timeScale(d.start))
+    .attr("x2", d => timeScale(d.end))
+    .attr("stroke", lineColor)
+    .attr("stroke-width", lineWidth)
     .attr("stroke-linecap", "round")
 
 expGroup
     .append("image")
     .attr("href", d => d.img)
-    .attr("x", d => d.placement === "left" ? -40 - picDim : 40)
-    .attr("y", d => timeScale(new Date(d.end.getTime() / 2  + d.start.getTime() / 2)) - picDim / 2)
+    .attr("y", d => d.placement === "up" ? -40 - picDim : 40)
+    .attr("x", d => timeScale(new Date(d.end.getTime() / 2 + d.start.getTime() / 2)) - picDim / 2)
     .attr("height", picDim)
     .attr("width", picDim)
+
+
+export default this;
