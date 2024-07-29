@@ -23,7 +23,7 @@ const expData = [
         start: new Date(2022, 3, 1),
         end: new Date(2022, 8, 30),
         type: "intern",
-        img: "../asset/otif.png"
+        img: "https://github.com/Blazar221/blazar221.github.io/blob/main/static/asset/otif.png?raw=true"
     },
     {
         place: "University of Southern California",
@@ -39,7 +39,7 @@ const expData = [
         start: new Date(2020, 11, 1),
         end: new Date(2021, 5, 12),
         type: "fulltime",
-        img: "https://www.xjtu.edu.cn/__local/E/26/06/414ABA4090B26221D9D69928163_9872DAFE_9521.jpg"
+        img: "https://github.com/Blazar221/blazar221.github.io/blob/main/static/asset/xjtu.png?raw=true"
     },
     {
         place: "Nanjing University",
@@ -47,7 +47,7 @@ const expData = [
         start: new Date(2016, 9, 1),
         end: new Date(2020, 5, 12),
         type: "school",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgilpEuNIMZ5_Gu-0cauhbq_SOzkGzbCOlYge_HsdcHlLuLln7ZKBCeni3n3OcgAtZKfs&usqp=CAU"
+        img: "https://github.com/Blazar221/blazar221.github.io/blob/main/static/asset/nju.png?raw=true"
     },
     {
         place: "FanRuan Software Co., Ltd.",
@@ -55,7 +55,7 @@ const expData = [
         start: new Date(2019, 7, 1),
         end: new Date(2019, 9, 1),
         type: "intern",
-        img: "https://media.licdn.com/dms/image/C510BAQHP4PSKELBPKQ/company-logo_200_200/0/1631332597680?e=2147483647&v=beta&t=74kyq6dh67hlcNOa9zmGvz6ntC0q-7OwkHZvyS0ALmY"
+        img: "https://github.com/Blazar221/blazar221.github.io/blob/main/static/asset/fr.png?raw=true"
     },
 
 ]
